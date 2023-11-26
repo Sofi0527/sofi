@@ -1,0 +1,403 @@
+html,
+body {
+  margin: 0;
+  font-family: "PingFang TC", "Microsoft Yahei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e272e;
+  min-width: 375px;
+}
+
+main {
+  width: 1024px;
+  height: 768px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.jp-grid1,
+.jp-grid2 {
+  display: flex;
+  position: absolute;
+  top: 220px;
+  /* 应用粉笔特效图案 */
+  /* filter: url(#chalk); */
+}
+
+.pro-card-wrapper {
+  /* 开启3D空间 */
+  perspective: 300px;
+}
+
+.pro-card {
+  /* 基础布局 */
+  width: 80px;
+  height: 80px;
+  margin: 4px;
+  font-size: 18px;
+  position: relative;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  /* 翻转特效时间 */
+  transition: transform 0.8s;
+  /* 保留3D空间 */
+  transform-style: preserve-3d;
+}
+
+/* 假名 */
+.hiragana,
+.katakana {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* 隐藏3D的背面 */
+  backface-visibility: hidden;
+  border: 1px solid #ffffff;
+  color: rgb(1, 1, 1);
+}
+
+/* 翻转卡片 */
+.katakana {
+  transform: rotateY(180deg);
+}
+
+.pro-card-wrapper:hover .pro-card {
+  transform: rotateY(180deg);
+}
+
+/* 屏幕适配 */
+@media screen and (max-width: 960px) {
+  .pro-card {
+    width: 120px;
+    height: 120px;
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .pro-card {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+  /* 屏幕小于650px特效会影响阅读，取消 */
+  .row {
+    filter: none;
+  }
+
+  .hiragana,
+  .katakana {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .pro-card {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+}
+
+.naiai {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+
+ /*设置字体*/
+ p.xuni {
+    font-family: STXinwei;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    word-spacing: 40px;
+}
+/*设置图片间距*/
+.xuni img {
+    margin-right: 5px;
+}
+/*设置字体样式*/
+h1 {
+   font-family: STXingkai;
+   color:rgb(235, 140, 187);
+}
+/*设置文本*/
+div.ramwire {
+    text-align: center;
+}
+p.ramwire {
+    text-align: center;
+}
+p.geshou{
+    text-align: center;
+    word-spacing: 80px;
+}
+.gs {
+    width: 350px;
+    height: 120px;
+}
+/*设置浮动*/
+.gs img {
+    float: left;
+    margin-right: 20px;
+}
+h3.one {
+    text-align: center;    
+    word-spacing: 74px;
+}
+h3.two {
+    text-align: center;
+    word-spacing: 58px;
+}
+.fj {
+    width: 700px;
+    height: 160px;
+}
+.fj img {
+    float: left;
+    margin-right: 20px;
+}
+div.jt {
+    position: absolute;
+    right: 320px;
+    top: 25px;
+}
+.dy{
+    width: 300px;
+    height: 100px;
+}
+.dy img {
+    float: left;
+}
+/*设置3d格式框*/
+div.wb {
+background-color: whitesmoke;
+opacity: 0.8;
+padding: 25px 50px;
+border-style: outset;
+border-width: 5px;
+border-color: lightpink;
+}
+/*设置相对位置*/
+div.row{
+    z-index: 1;
+}
+/* 创建三个不相等的列 */
+.column {
+float: left;
+}
+.column.one {
+width: 25%;
+}
+.column{
+    width: 5%;
+}
+.column.two {
+width: 40%;
+}
+.column.three {
+width: 25%;
+}
+/* 列后面清除浮动 */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+div.text{
+    font-family: STXinwei;
+    color: whitesmoke;
+}
+p.name
+{
+    font-size: 70px;
+    position:absolute;
+    top: -40px;
+    left: 180px;
+    color:lightpink;
+}
+/*背景设置*/
+body
+{
+    background-image: url(./images/61359054_p0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul.dhl {
+    z-index: 2;
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    background-color:lightpink;
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    opacity: 0.8;
+}
+li{
+    float: left;
+}
+/*导航栏以及下拉菜单设置*/
+li a, .first {
+    display: inline-block;
+    color:honeydew;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 40px;
+    text-decoration: none;
+}
+li a:hover, .aa:hover, .first {
+    background-color:#fcaad3;
+}
+.active{
+    background-color:aquamarine;
+}
+.aa {
+display: inline-block;
+}
+
+.aaa {
+display: none;
+position: absolute;
+background-color:ivory;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px;
+}
+
+.aaa a {
+color:darksalmon;
+font-weight: bold;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.aaa a:hover {background-color:yellowgreen}
+
+.aa:hover .aaa {
+display: block;
+}
+/*搜索栏设计*/
+.boxt{
+z-index: 2;
+position: absolute;
+right: 20px;
+top: 155px;
+display: inline-block;
+height: 35px;
+overflow: auto;
+border-radius: 35px;
+border: 1px solid violet;
+}
+.boxt input{
+padding: 0px 10px;
+float: left;
+height: 37px;
+width: 130px;
+line-height: 0px;
+outline: none;
+border: none;
+}
+.boxt button{
+float: left;
+border: none;
+line-height: 37px;
+background:pink;
+color: #fff;
+}
+.row{
+    position: absolute;
+    top: 210px;
+}
+.im {
+display: block;
+position: absolute;
+border-radius: 10px;
+right: 5px;
+top: 5px;
+
+}
+.image {
+display: block;
+}
+/*文字图片悬浮效果设置*/
+.overlay {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color:pink;
+opacity: 0.8;
+overflow: hidden;
+width: 0;
+height: 100%;
+transition: .5s ease;
+}
+.im:hover .overlay {
+width: 100%;
+}
+.text {
+white-space: nowrap; 
+color:black;
+font-size: 25px;
+font-weight: bold;
+position: absolute;
+overflow: hidden;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+}
+div.fj {
+     opacity:initial;
+} 
+
+.quotes {
+  position: absolute;
+  top: 250px;
+  right: 60px;
+  width: 350px;
+  height: 220px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-left: 40px;
+  padding-right: 20px;
+  font-weight: bold;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+.tit {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.greet{
+  padding: 0px 20px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
